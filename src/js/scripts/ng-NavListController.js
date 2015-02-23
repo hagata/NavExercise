@@ -1,10 +1,3 @@
-console.log('%c                ', 'background:#ec008c; color:  #FFF');
-console.log('%c  Hello, HUGE!  ', 'background:#ec008c; color:  #FFF');
-console.log('%c                ', 'background:#ec008c; color:  #FFF');
-var navApp = angular.module('navApp', ['ngAnimate'])
-
-
-
 
 navApp.controller('NavListController', ['$scope','$http', function($scope, $http){
 	$scope.devtest = "this test is up";
@@ -51,6 +44,3 @@ navApp.controller('NavListController', ['$scope','$http', function($scope, $http
 // 		expect(stat).toBe(200);
 // 	});
 // });
-navApp.controller('ScreenController', ['$scope', function($scope){
-
-}])

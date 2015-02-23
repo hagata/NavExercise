@@ -8,7 +8,7 @@ $keyline: 24px;
 
 //Typography
 
-$primaryNavigation: 21px/px HUGEAvantGardeBold;
+$primaryNavigation: 21px/48px HUGEAvantGardeBold;
 $secondaryNavigation: 16px/48px Galaxie;
 $headlineDesktop: 120px/132px HUGEAvantGardeBold;
 $bodyDesktop: 24px/1.5 Galaxie;
@@ -20,7 +20,13 @@ $copyright: 12px/16px HelveticaNeue;
 
 $HUGE: #ec008c;
 $LightGray: #eee;
+$black:#0a0a0a;
 $transparentBlack: rgba(0, 0, 0, 0.5);
 
 
 $medium-screen:768px;
+
+
+//Ani
+$curve: cubic-bezier(.54,.25,.35,.89);
+$smoothin: all 400ms $curve; 

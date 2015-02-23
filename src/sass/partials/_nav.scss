@@ -1,12 +1,219 @@
-.nav-first-level{
+nav{
+	// transform:translateX(-100vw);
+	padding-top:$baseline;
+	width:80%;
+	height:100vh;
+	min-width:$keyline*12; //288px 
+	background:#fff;
+	position:relative;
+	overflow:scroll;
+	transition:all 300ms ease-in-out;
+	transform:translateX(-100%);
+	// box-shadow:0 0 3px 0 $transparentBlack;
+
 	li{
-		font:19px/20px;
+		
+		padding:0;
+	}
+	a{
+		font:$primaryNavigation;
+		text-decoration: none;
+		color:$black;
+		padding-left:$keyline;
+
 
 	}
+// Desktop Layout ====================
+
+@include media($medium-screen){
+	background:none;
+	padding-top:0;
+	padding-left:$baseline*7;//initial offset
+	transform:translateX(0);
+	width:auto;
+
+	li{
+		float: left;
+		padding:$baseline $keyline; // 48px
+		cursor: pointer;
+
+		&:hover{
+			background: #fff;
+		}
+		
+		&:hover>.nav-second-level{
+			display: block;
+			float: left;
+			position: absolute;
+			// height: 220px;
+			background: white;
+			// color: $HUGE;
+			top: 72px;
+			margin: 0;
+			margin-left: -24px;
+		}
+
+		&:hover>a{
+			color: $HUGE;
+		}
+
+		a{
+			font:$primaryNavigation;
+			text-decoration: none;
+			color: #fff;
+
+		}
+
+
+	}
+
 }
+
+}
+
+// ================================
+
+
+
 
 .nav-second-level{
+
+	&.collapsed{
+		display:none; 
+	}
+	&.sideSecondary-active{
+	display:block;
+}
+
 	li{
-		padding-left: 1em;
+		width: 222px;
+		z-index:100;
+		padding:0;
+		cursor: pointer;
+		display: block;
+		width: 100%;
+		transition: background 280ms $curve;
+
+		&:hover{
+			background:$LightGray;
+		}
+		&:hover>a{color:$HUGE;}
+	}
+	a{
+		font:$secondaryNavigation;
+		transition: color 180ms ease-in-out;
+		color: $black;
+	}
+	@include media($medium-screen){
+		width: 222px;
+
+		li{
+			
+			padding-left: $keyline;
+
+		&:hover{
+			background:$LightGray;
+		}
+
+			
+		}
+		a{
+			padding-left:0;
+		}
+
+	}
+
+	
+}
+
+
+.expander-arrow{
+	position:absolute;
+	right:$keyline;
+	cursor:pointer;
+	svg{
+		@include size($keyline);
+	}
+
+	@include media($medium-screen){
+		display: none;
+	}
+	&.expanded-down{
+		transform:rotate(180deg);
 	}
 }
+
+
+// Navigation screen behind
+
+.screen{
+	
+	width:100%;
+	height:100%;
+	background:$transparentBlack;
+	position:absolute;
+	top:0px;
+	z-index:90;
+	opacity:1;
+
+	&.ng-animate {
+	  -webkit-transition:all $curve 500ms;
+	  -moz-transition:all $curve 500ms;
+	  -o-transition:all $curve 500ms;
+	  transition:all $curve 500ms;
+	  opacity: 1;
+	}
+
+	/* Initial state when showing */
+	&.ng-hide-remove {
+	  opacity: 0;
+	  display: block !important;
+	}
+
+	/* Will transition towards this state */
+	&.ng-hide-remove.ng-hide-remove-active {
+	  opacity: 1;
+	}
+	@include media($medium-screen){
+		
+	}
+
+}
+
+
+.copyright{
+	font:$copyright;
+	position:absolute;
+	bottom:$base*5;
+}
+
+
+
+.side-open{
+	transform:translateX(0);
+
+	&.animate {
+	  -webkit-transition:all $curve 500ms;
+	  -moz-transition:all $curve 500ms;
+	  -o-transition:all $curve 500ms;
+	  transition:all $curve 500ms;
+	  opacity: 1; /* Default value but added for clarity */
+	}
+
+	/* Initial state when showing */
+	&.ng-hide-remove {
+	  opacity: 0;
+	  display: block !important;
+	}
+
+	/* Will transition towards this state */
+	&.ng-hide-remove.ng-hide-remove-active {
+	  opacity: 1;
+	}
+}
+
+
+
+
+
+

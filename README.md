@@ -73,13 +73,13 @@ Measurements are specified in pixels. Dimensions are fluid unless specified.
 
 #### Desktop
 
-* On hover, Primary Navigation reverses color (white/magenta).
-* On click, if item contains a URL, Primary Navigation navigates to a new page.
+~~~* On hover, Primary Navigation reverses color (white/magenta).
+~~~* On click, if item contains a URL, Primary Navigation navigates to a new page.
 * On click, if item contains other items, Secondary Navigation appears (see Desktop, Secondary Navigation).
 * Menu appears containing Secondary Navigation.
 * Translucent mask appears over content, behind menu.
-* On hover in, Secondary Navigation changes color (magenta/light gray).
-* On click, Secondary navigates to a new page.
+~~~* On hover in, Secondary Navigation changes color (magenta/light gray).
+~~~* On click, Secondary navigates to a new page.
 * On click outside of menu, menu and mask are hidden.
 
 #### Mobile
