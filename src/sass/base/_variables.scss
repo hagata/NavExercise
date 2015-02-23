@@ -8,16 +8,19 @@ $keyline: 24px;
 
 //Typography
 
-$primaryNavigation: 21/48 HUGE Avant Garde Bold;
-$secondaryNavigation: 16/48 Galaxie Copernicus Book;
-$headlineDesktop: 120/132 HUGE Avant Garde Bold;
-$bodyDesktop: 24/36 Galaxie Copernicus Book;
-$headlineMobile: 44/48 HUGE Avant Garde Bold;
-$bodyMobile: 14/24 Galaxie Copernicus Book;
-$copyright: 12/16 Helvetica Neue Regular;
+$primaryNavigation: 21px/px HUGEAvantGardeBold;
+$secondaryNavigation: 16px/48px Galaxie;
+$headlineDesktop: 120px/132px HUGEAvantGardeBold;
+$bodyDesktop: 24px/1.5 Galaxie;
+$headlineMobile: 44px/48px HUGEAvantGardeBold;
+$bodyMobile: 14px/24px Galaxie;
+$copyright: 12px/16px HelveticaNeue;
 
 // Color
 
 $HUGE: #ec008c;
 $LightGray: #eee;
 $transparentBlack: rgba(0, 0, 0, 0.5);
+
+
+$medium-screen:768px;

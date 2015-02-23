@@ -1,0 +1,23 @@
+header{
+	background:$HUGE;
+	height:$baseline*5;// 60px
+	margin:0;
+	@include media($medium-screen){
+		height:$baseline*6;//72px
+	};
+}
+
+.toggle {
+	@include size(60px);
+	cursor: pointer;
+
+	svg{
+		@include size(60px);
+
+	}
+
+//The toggle business can only be seen on little screen!
+	@include media($medium-screen){
+		display: none;	
+	};
+}

@@ -1,0 +1,22 @@
+// top-section on homepage
+
+.top-content{
+	margin-top:$base*12.5; //50px
+	
+	@include media($medium-screen){
+		margin-top:$base*15; //50px
+	}
+
+	p{	
+		@include keyline-padding;
+		@include outer-container;
+		font:$bodyMobile;
+
+			
+		@include media($medium-screen){
+			font:$bodyDesktop;
+
+		}
+	}
+
+}

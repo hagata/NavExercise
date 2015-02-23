@@ -1,12 +1,30 @@
 // Import everything we need! and hurry!
 
 
+//Needed 
 @import"base/variables";
+@import"base/reset";
+
+//Mixing
+@import"mixins/prefixer";
+@import"mixins/box-sizing";
+@import"mixins/clearfix";
+@import"mixins/layoutmixes";
+// Neat, grid helpers/
+@import"neat/neat";
+
+//Globals
 @import"base/fonts";
-@import"base/main"; //base styles
+@import"base/typography";
+@import"base/layout";
+
+// @import"base/main"; //base styles
 
 
-//
-@import"partials/navHeader";
-@import"partials/navSide";
 
+//Partials
+
+@import"partials/navheader";
+// @import"partials/navside";
+@import"partials/hero";
+@import"partials/index";
