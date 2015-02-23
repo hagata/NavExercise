@@ -61,6 +61,7 @@ nav{
 			font:$primaryNavigation;
 			text-decoration: none;
 			color: #fff;
+			padding-left:0;
 
 		}
 
@@ -128,9 +129,11 @@ nav{
 
 
 .expander-arrow{
+	transition: all 100ms $curve;
 	position:absolute;
 	right:$keyline;
 	cursor:pointer;
+	transform:rotate(0deg);
 	svg{
 		@include size($keyline);
 	}
@@ -138,8 +141,8 @@ nav{
 	@include media($medium-screen){
 		display: none;
 	}
-	&.expanded-down{
-		transform:rotate(180deg);
+	&.sideSecondary-active{
+		transform: rotate(180deg);
 	}
 }
 
@@ -183,8 +186,13 @@ nav{
 
 .copyright{
 	font:$copyright;
-	position:absolute;
-	bottom:$base*5;
+	position: absolute;
+	bottom: 70px;
+	padding-left: $keyline;
+
+	@include media($medium-screen){
+		display: none;
+	}
 }
 
 
@@ -212,7 +220,63 @@ nav{
 	}
 }
 
+.sideSecondary-active{
+	transform:translateY(0);
 
+	&.animate {
+	  -webkit-transition:all $curve 500ms;
+	  -moz-transition:all $curve 500ms;
+	  -o-transition:all $curve 500ms;
+	  transition:all $curve 500ms;
+	  opacity: 1; /* Default value but added for clarity */
+	}
+
+	/* Initial state when showing */
+	&.ng-hide-remove {
+	  opacity: 0;
+	  display: block !important;
+	}
+
+	/* Will transition towards this state */
+	&.ng-hide-remove.ng-hide-remove-active {
+	  opacity: 1;
+	}
+}
+
+.nav-second-level{
+	transition:all $curve 1s;
+	opacity:1;
+}
+.nav-second-level.collapsed{
+
+	&.ng-animate {
+	  -webkit-transition:all $curve 300ms;
+	  -moz-transition:all $curve 300ms;
+	  -o-transition:all $curve 300ms;
+	  transition:all $curve 300ms;
+	  opacity: 1; /* Default value but added for clarity */
+	}
+
+	/* Initial state when showing */
+	&.collapsed-add-remove,&.collapsed-add-active {
+	  opacity: 0;
+	
+	  display: block !important;
+	}
+
+	/* Will transition towards this state */
+	&.collapsed-remove.collapsed-remove-active {
+	  opacity: 1;
+	  
+	}
+
+
+
+	@include media($medium-screen){
+		display: none;
+	}
+
+}
 
 
 

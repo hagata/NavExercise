@@ -306,7 +306,8 @@ nav {
         nav li a {
           font: 21px/48px HUGEAvantGardeBold;
           text-decoration: none;
-          color: #fff; } }
+          color: #fff;
+          padding-left: 0; } }
 
 .nav-second-level.collapsed {
   display: none; }
@@ -339,16 +340,18 @@ nav {
       padding-left: 0; } }
 
 .expander-arrow {
+  transition: all 100ms cubic-bezier(.54, .25, .35, .89);
   position: absolute;
   right: 24px;
-  cursor: pointer; }
+  cursor: pointer;
+  transform: rotate(0deg); }
   .expander-arrow svg {
     height: 24px;
     width: 24px; }
   @media screen and (min-width: 768px) {
     .expander-arrow {
       display: none; } }
-  .expander-arrow.expanded-down {
+  .expander-arrow.sideSecondary-active {
     transform: rotate(180deg); }
 
 .screen {
@@ -376,7 +379,11 @@ nav {
 .copyright {
   font: 12px/16px HelveticaNeue;
   position: absolute;
-  bottom: 20px; }
+  bottom: 70px;
+  padding-left: 24px; }
+  @media screen and (min-width: 768px) {
+    .copyright {
+      display: none; } }
 
 .side-open {
   transform: translateX(0);
@@ -394,6 +401,46 @@ nav {
     display: block !important; }
   .side-open.ng-hide-remove.ng-hide-remove-active {
     opacity: 1; }
+
+.sideSecondary-active {
+  transform: translateY(0);
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .sideSecondary-active.animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .sideSecondary-active.ng-hide-remove {
+    opacity: 0;
+    display: block !important; }
+  .sideSecondary-active.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
+
+.nav-second-level {
+  transition: all cubic-bezier(.54, .25, .35, .89) 1s;
+  opacity: 1; }
+
+.nav-second-level.collapsed {
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .nav-second-level.collapsed.ng-animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .nav-second-level.collapsed.collapsed-add-remove, .nav-second-level.collapsed.collapsed-add-active {
+    opacity: 0;
+    display: block !important; }
+  .nav-second-level.collapsed.collapsed-remove.collapsed-remove-active {
+    opacity: 1; }
+  @media screen and (min-width: 768px) {
+    .nav-second-level.collapsed {
+      display: none; } }
 
 .hero {
   height: 240px;

@@ -1,5 +1,40 @@
-# Huge Navigation Exercise
+# An Implementation of the Huge Navigation Exercise
 
+##Getting Started
+
+Run with
+
+```
+git clone **git@github.com:hugeinc/NavExercise.git**
+cd NavExercise
+$npm i && npm start
+```
+
+
+##Notable
+
+Using the the base files, this adds Gulp to handle Sass.
+I've used Angular to speed up the process and keep things neat and tidy. This is *first use* with Angular, Karma, and Jasmine (While in the current state, the karma/jasmine tests have been put on hold)
+
+##Unit testing
+
+Unit testing will be handled with [Karma](http://karma-runner.github.io/0.12/index.html)
+**there are currently no unit tests**
+
+run tests with 
+‘''
+npm test
+‘''
+
+it is also possible to run a single test (karma will exit after running the test) using gulp with 
+‘''
+gulp test
+‘''
+
+
+
+
+---
 ## Overview
 
 This exercise will have the candidate build a responsive site navigation driven by an AJAX request.
@@ -73,13 +108,13 @@ Measurements are specified in pixels. Dimensions are fluid unless specified.
 
 #### Desktop
 
-~~~* On hover, Primary Navigation reverses color (white/magenta).
-~~~* On click, if item contains a URL, Primary Navigation navigates to a new page.
+* On hover, Primary Navigation reverses color (white/magenta).
+* On click, if item contains a URL, Primary Navigation navigates to a new page.
 * On click, if item contains other items, Secondary Navigation appears (see Desktop, Secondary Navigation).
 * Menu appears containing Secondary Navigation.
 * Translucent mask appears over content, behind menu.
-~~~* On hover in, Secondary Navigation changes color (magenta/light gray).
-~~~* On click, Secondary navigates to a new page.
+* On hover in, Secondary Navigation changes color (magenta/light gray).
+* On click, Secondary navigates to a new page.
 * On click outside of menu, menu and mask are hidden.
 
 #### Mobile
