@@ -220,6 +220,12 @@ header {
     .toggle {
       display: none; } }
 
+.nav-first-level li {
+  font: 19px/20px; }
+
+.nav-second-level li {
+  padding-left: 1em; }
+
 .hero {
   height: 240px;
   background: url('../images/background-image.jpg');
