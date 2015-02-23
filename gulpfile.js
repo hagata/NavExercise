@@ -20,7 +20,7 @@ gulp.task('sass',function(){
 });
 
 gulp.task('jsconcat',function(){
-	return gulp.src('src/js/*.js')
+	return gulp.src('src/js/scripts/*.js')
 		.pipe(concat('scripts.js'))
 		.pipe(gulp.dest('src/js/'));
 })
@@ -33,9 +33,10 @@ gulp.task('compress', function() {
 
 
 gulp.task('watch',function(){
-	gulp.watch('sass/**',['sass'])
+	gulp.watch('src/sass/**',['sass'])
+	gulp.watch('src/js/**',['jsconcat','compress'])
 	gulp.watch('public/*.html');
 });
 
 gulp.task('scripts',['jsconcat','compress']);
-gulp.task('default',['sass','watch']);
+gulp.task('default',['sass','jsconcat','compress','watch']);

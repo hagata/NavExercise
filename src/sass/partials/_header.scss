@@ -1,0 +1,86 @@
+header{
+	position:fixed;
+	z-index:99;
+	background:$HUGE;
+	width:100%;
+	height:$baseline*5;// 60px
+	margin:0;
+	@include media($medium-screen){
+		height:$baseline*6;//72px
+	};
+}
+
+
+%toggle-icon{
+	@include size(60px);
+	cursor: pointer;
+	opacity: 1; 
+	position:absolute;
+	-webkit-transition:all $curve 500ms;
+	-moz-transition:all $curve 500ms;
+	-o-transition:all $curve 500ms;
+	transition:all $curve 500ms;
+}
+
+
+.toggle{
+	height:60px;
+
+	@include media($medium-screen){
+		display: none;
+	}
+}
+.toggle-open {
+	@include size(60px);
+	cursor: pointer;
+	opacity: 1; 
+	position:absolute;
+
+	display:inline-block;
+	-webkit-transition:all $curve 500ms;
+	-moz-transition:all $curve 500ms;
+	-o-transition:all $curve 500ms;
+	transition:all $curve 500ms;
+	left:0;
+	transform: translateX(0);
+
+	svg{
+		@include size(60px);
+	}
+
+//The toggle business can only be seen on little screen!
+	@include media($medium-screen){
+		display: none;	
+	};
+
+}
+
+.menu-toggle-switch .toggle-open {
+		opacity: 0; 
+		transform: translateX(360px);
+	}
+.menu-toggle-switch .toggle-close {
+	opacity: 1; 
+	transform: translateX(0px);
+}
+
+
+// Refactor these toggle classes
+
+.toggle-close{
+	@include size(60px);
+	svg{@include size(60px);}
+	cursor: pointer;
+	opacity: 0; 
+	display:inline-block;
+	-webkit-transition:all $curve 500ms;
+	-moz-transition:all $curve 500ms;
+	-o-transition:all $curve 500ms;
+	transition:all $curve 500ms;
+	position:fixed;
+	right:0;
+	transform: translateX(-190px);
+
+
+
+}

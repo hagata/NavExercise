@@ -1,0 +1,27 @@
+.hero{
+	height:240px;	
+	background:url('../images/background-image.jpg');
+	background-size:cover;
+
+	@include media($medium-screen){
+		height: 640px;
+	}
+}
+
+.hero-header {
+	font: $headlineMobile;
+	margin-top:$base*12.5; //50px
+	@include keyline-padding;
+
+		@include media($medium-screen){
+				color:#fff;
+		position: absolute;
+		bottom:0;
+		top: 190px;
+		left: 0;
+		right:0;
+		font: $headlineDesktop;
+		letter-spacing: -0.06em;
+		text-align: center;
+	}
+}

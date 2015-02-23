@@ -1,3 +1,190 @@
+/*
+	HTML5 Reset :: style.css
+	----------------------------------------------------------
+	We have learned much from/been inspired by/taken code where offered from:
+	
+	Eric Meyer					:: http://meyerweb.com
+	HTML5 Doctor				:: http://html5doctor.com
+	and the HTML5 Boilerplate	:: http://html5boilerplate.com
+	
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html, body, body div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, figure, footer, header, menu, nav, section, time, mark, audio, video, details, summary {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  background: transparent; }
+
+article, aside, figure, footer, header, nav, section, details, summary {
+  display: block; }
+
+/* consider resetting the default cursor: https://gist.github.com/murtaugh/5247154 */
+/* Apply a natural box layout model to all elements: http://paulirish.com/2012/box-sizing-border-box-ftw/ */
+*, *:before, *:after {
+  box-sizing: border-box; }
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img, object, embed {
+  max-width: 100%; }
+
+/* force a vertical scrollbar to prevent a jumpy page */
+html {
+  overflow-y: scroll; }
+
+/* we use a lot of ULs that aren't bulleted. 
+	don't forget to restore the bullets within content. */
+ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after, q:before, q:after {
+  content: '';
+  content: none; }
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent; }
+
+del {
+  text-decoration: line-through; }
+
+abbr[title], dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help; }
+
+/* tables still need cellspacing="0" in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+th {
+  font-weight: bold;
+  vertical-align: bottom; }
+
+td {
+  font-weight: normal;
+  vertical-align: top; }
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0; }
+
+input, select {
+  vertical-align: middle; }
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */ }
+
+input[type="radio"] {
+  vertical-align: text-bottom; }
+
+input[type="checkbox"] {
+  vertical-align: bottom; }
+
+.ie7 input[type="checkbox"] {
+  vertical-align: baseline; }
+
+.ie6 input {
+  vertical-align: text-bottom; }
+
+select, input, textarea {
+  font: 99% sans-serif; }
+
+table {
+  font-size: inherit;
+  font: 100%; }
+
+small {
+  font-size: 85%; }
+
+strong {
+  font-weight: bold; }
+
+td, td img {
+  vertical-align: top; }
+
+/* Make sure sup and sub don't mess with your line-heights http://gist.github.com/413930 */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* standardize any monospaced elements */
+pre, code, kbd, samp {
+  font-family: monospace, sans-serif; }
+
+/* hand cursor on clickable elements */
+.clickable, label, input[type=button], input[type=submit], input[type=file], button {
+  cursor: pointer; }
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button, input, select, textarea {
+  margin: 0; }
+
+/* make buttons play nice in IE */
+button, input[type=button] {
+  width: auto;
+  overflow: visible; }
+
+/* scale images in IE7 more attractively */
+.ie7 img {
+  -ms-interpolation-mode: bicubic; }
+
+/* prevent BG image flicker upon hover 
+   (commented out as usage is rare, and the filter syntax messes with some pre-processors)
+.ie6 html {filter: expression(document.execCommand("BackgroundImageCache", false, true));}
+*/
+/* let's clear some floats */
+.clearfix:before, .clearfix:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  zoom: 1; }
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box; }
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit; }
+
 @font-face {
   font-family: 'HUGEAvantGardeBold';
   src: url("/fonts/huge_agb_v5-webfont.eot?#iefix") format("embedded-opentype"), url("/fonts/huge_agb_v5-webfont.woff") format("woff"), url("/fonts/huge_agb_v5-webfont.ttf") format("truetype"), url("/fonts/huge_agb_v5-webfont.svg#svgFontName") format("svg"); }
@@ -14,17 +201,288 @@
   font-weight: normal;
   src: url("/fonts/GalaxieCopernicus-BookItalic.eot?#iefix") format("embedded-opentype"), url("/fonts/GalaxieCopernicus-BookItalic.woff") format("woff"), url("/fonts/GalaxieCopernicus-BookItalic.svg#svgFontName") format("svg"); }
 
-body {
+header {
+  position: fixed;
+  z-index: 99;
   background: #ec008c;
-  color: #fff; }
+  width: 100%;
+  height: 60px;
+  margin: 0; }
+  @media screen and (min-width: 768px) {
+    header {
+      height: 72px; } }
 
-h1 {
+.toggle {
+  height: 60px; }
+  @media screen and (min-width: 768px) {
+    .toggle {
+      display: none; } }
+
+.toggle-open {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  opacity: 1;
   position: absolute;
-  top: 50%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  margin: 0;
-  font: 20vmin/1 HUGEAvantGardeBold;
-  letter-spacing: -0.06em;
-  text-align: center; }
+  display: inline-block;
+  -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  left: 0;
+  transform: translateX(0); }
+  .toggle-open svg {
+    height: 60px;
+    width: 60px; }
+  @media screen and (min-width: 768px) {
+    .toggle-open {
+      display: none; } }
+
+.menu-toggle-switch .toggle-open {
+  opacity: 0;
+  transform: translateX(360px); }
+
+.menu-toggle-switch .toggle-close {
+  opacity: 1;
+  transform: translateX(0px); }
+
+.toggle-close {
+  height: 60px;
+  width: 60px;
+  cursor: pointer;
+  opacity: 0;
+  display: inline-block;
+  -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+  position: fixed;
+  right: 0;
+  transform: translateX(-190px); }
+  .toggle-close svg {
+    height: 60px;
+    width: 60px; }
+
+nav {
+  padding-top: 12px;
+  width: 80%;
+  height: 100vh;
+  min-width: 288px;
+  background: #fff;
+  position: relative;
+  overflow: scroll;
+  transition: all 300ms ease-in-out;
+  transform: translateX(-100%); }
+  nav li {
+    padding: 0; }
+  nav a {
+    font: 21px/48px HUGEAvantGardeBold;
+    text-decoration: none;
+    color: #0a0a0a;
+    padding-left: 24px; }
+  @media screen and (min-width: 768px) {
+    nav {
+      background: none;
+      padding-top: 0;
+      padding-left: 84px;
+      transform: translateX(0);
+      width: auto; }
+      nav li {
+        float: left;
+        padding: 12px 24px;
+        cursor: pointer; }
+        nav li:hover {
+          background: #fff; }
+        nav li:hover > .nav-second-level {
+          display: block;
+          float: left;
+          position: absolute;
+          background: white;
+          top: 72px;
+          margin: 0;
+          margin-left: -24px; }
+        nav li:hover > a {
+          color: #ec008c; }
+        nav li a {
+          font: 21px/48px HUGEAvantGardeBold;
+          text-decoration: none;
+          color: #fff;
+          padding-left: 0; } }
+
+.nav-second-level.collapsed {
+  display: none; }
+.nav-second-level.sideSecondary-active {
+  display: block; }
+.nav-second-level li {
+  width: 222px;
+  z-index: 100;
+  padding: 0;
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  transition: background 280ms cubic-bezier(.54, .25, .35, .89); }
+  .nav-second-level li:hover {
+    background: #eee; }
+  .nav-second-level li:hover > a {
+    color: #ec008c; }
+.nav-second-level a {
+  font: 16px/48px Galaxie;
+  transition: color 180ms ease-in-out;
+  color: #0a0a0a; }
+@media screen and (min-width: 768px) {
+  .nav-second-level {
+    width: 222px; }
+    .nav-second-level li {
+      padding-left: 24px; }
+      .nav-second-level li:hover {
+        background: #eee; }
+    .nav-second-level a {
+      padding-left: 0; } }
+
+.expander-arrow {
+  transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  transform: rotate(0deg); }
+  .expander-arrow svg {
+    height: 24px;
+    width: 24px; }
+  @media screen and (min-width: 768px) {
+    .expander-arrow {
+      display: none; } }
+  .expander-arrow.sideSecondary-active {
+    transform: rotate(180deg); }
+
+.screen {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: absolute;
+  top: 0px;
+  z-index: 90;
+  opacity: 1;
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .screen.ng-animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    opacity: 1; }
+  .screen.ng-hide-remove {
+    opacity: 0;
+    display: block !important; }
+  .screen.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
+
+.copyright {
+  font: 12px/16px HelveticaNeue;
+  position: absolute;
+  bottom: 70px;
+  padding-left: 24px; }
+  @media screen and (min-width: 768px) {
+    .copyright {
+      display: none; } }
+
+.side-open {
+  transform: translateX(0);
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .side-open.animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .side-open.ng-hide-remove {
+    opacity: 0;
+    display: block !important; }
+  .side-open.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
+
+.sideSecondary-active {
+  transform: translateY(0);
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .sideSecondary-active.animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .sideSecondary-active.ng-hide-remove {
+    opacity: 0;
+    display: block !important; }
+  .sideSecondary-active.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
+
+.nav-second-level {
+  transition: all cubic-bezier(.54, .25, .35, .89) 1s;
+  opacity: 1; }
+
+.nav-second-level.collapsed {
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .nav-second-level.collapsed.ng-animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .nav-second-level.collapsed.collapsed-add-remove, .nav-second-level.collapsed.collapsed-add-active {
+    opacity: 0;
+    display: block !important; }
+  .nav-second-level.collapsed.collapsed-remove.collapsed-remove-active {
+    opacity: 1; }
+  @media screen and (min-width: 768px) {
+    .nav-second-level.collapsed {
+      display: none; } }
+
+.hero {
+  height: 240px;
+  background: url('../images/background-image.jpg');
+  background-size: cover; }
+  @media screen and (min-width: 768px) {
+    .hero {
+      height: 640px; } }
+
+.hero-header {
+  font: 44px/48px HUGEAvantGardeBold;
+  margin-top: 50px;
+  padding-left: 24px;
+  padding-right: 24px; }
+  @media screen and (min-width: 768px) {
+    .hero-header {
+      color: #fff;
+      position: absolute;
+      bottom: 0;
+      top: 190px;
+      left: 0;
+      right: 0;
+      font: 120px/132px HUGEAvantGardeBold;
+      letter-spacing: -0.06em;
+      text-align: center; } }
+
+.top-content {
+  margin-top: 50px; }
+  @media screen and (min-width: 768px) {
+    .top-content {
+      margin-top: 60px; } }
+  .top-content p {
+    padding-left: 24px;
+    padding-right: 24px;
+    max-width: 968px;
+    margin-left: auto;
+    margin-right: auto;
+    font: 14px/24px Galaxie; }
+    .top-content p:after {
+      content: "";
+      display: table;
+      clear: both; }
+    @media screen and (min-width: 768px) {
+      .top-content p {
+        font: 24px/1.5 Galaxie; } }
