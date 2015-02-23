@@ -270,7 +270,7 @@ nav {
   min-width: 288px;
   background: #fff;
   position: relative;
-  overflow: scroll;
+  overflow-y: auto;
   transition: all 300ms ease-in-out;
   transform: translateX(-100%); }
   nav li {
@@ -378,12 +378,16 @@ nav {
 
 .copyright {
   font: 12px/16px HelveticaNeue;
-  position: absolute;
-  bottom: 70px;
+  position: relative;
+  height: 50%;
   padding-left: 24px; }
   @media screen and (min-width: 768px) {
     .copyright {
       display: none; } }
+  .copyright p {
+    position: absolute;
+    height: 48px;
+    bottom: 48px; }
 
 .side-open {
   transform: translateX(0);
@@ -420,26 +424,22 @@ nav {
     opacity: 1; }
 
 .nav-second-level {
-  transition: all cubic-bezier(.54, .25, .35, .89) 1s;
-  opacity: 1; }
-
-.nav-second-level.collapsed {
+  -webkit-transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  -moz-transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  -o-transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  transform-origin: top;
+  transform: scaleY(1);
   /* Initial state when showing */
   /* Will transition towards this state */ }
-  .nav-second-level.collapsed.ng-animate {
-    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
-    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
-    -o-transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
-    transition: all cubic-bezier(.54, .25, .35, .89) 300ms;
-    opacity: 1;
-    /* Default value but added for clarity */ }
-  .nav-second-level.collapsed.collapsed-add-remove, .nav-second-level.collapsed.collapsed-add-active {
+  .nav-second-level.collapsed-add-remove, .nav-second-level.collapsed-add-active {
     opacity: 0;
-    display: block !important; }
-  .nav-second-level.collapsed.collapsed-remove.collapsed-remove-active {
-    opacity: 1; }
+    transform: scaleY(1); }
+  .nav-second-level.collapsed-remove {
+    opacity: 1;
+    transform: scaleY(0); }
   @media screen and (min-width: 768px) {
-    .nav-second-level.collapsed {
+    .nav-second-level {
       display: none; } }
 
 .hero {

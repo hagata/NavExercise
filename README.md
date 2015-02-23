@@ -22,14 +22,14 @@ Unit testing will be handled with [Karma](http://karma-runner.github.io/0.12/ind
 **there are currently no unit tests**
 
 run tests with 
-‘''
+'''
 npm test
-‘''
+'''
 
 it is also possible to run a single test (karma will exit after running the test) using gulp with 
-‘''
+'''
 gulp test
-‘''
+'''
 
 
 
@@ -41,7 +41,7 @@ This exercise will have the candidate build a responsive site navigation driven 
 
 Here are the guidelines for this exercise
 
-* No frameworks or libraries (this means jquery).
+~~~* No frameworks or libraries (this means jquery).
 * Chrome compliance is all that's required, all functions and features available in Chrome are in play.
 * Nav must be responsive.
 * Code must run after the following command, please ensure your code runs as you expect it to from a fresh checkout with these commands before submission.

@@ -1,15 +1,13 @@
 nav{
-	// transform:translateX(-100vw);
 	padding-top:$baseline;
 	width:80%;
 	height:100vh;
 	min-width:$keyline*12; //288px 
 	background:#fff;
 	position:relative;
-	overflow:scroll;
+	overflow-y:auto;
 	transition:all 300ms ease-in-out;
 	transform:translateX(-100%);
-	// box-shadow:0 0 3px 0 $transparentBlack;
 
 	li{
 		
@@ -186,12 +184,18 @@ nav{
 
 .copyright{
 	font:$copyright;
-	position: absolute;
-	bottom: 70px;
+	position:relative;
+	height:50%;
 	padding-left: $keyline;
 
 	@include media($medium-screen){
 		display: none;
+	}
+
+	p{
+		position: absolute;
+		height: $keyline*2; //48px
+		bottom:$keyline*2;
 	}
 }
 
@@ -243,30 +247,27 @@ nav{
 	}
 }
 
-.nav-second-level{
-	transition:all $curve 1s;
-	opacity:1;
-}
-.nav-second-level.collapsed{
 
-	&.ng-animate {
-	  -webkit-transition:all $curve 300ms;
-	  -moz-transition:all $curve 300ms;
-	  -o-transition:all $curve 300ms;
-	  transition:all $curve 300ms;
-	  opacity: 1; /* Default value but added for clarity */
-	}
+.nav-second-level{
+	// transform:scaleY(0);
+	  -webkit-transition:all 100ms $curve;
+	  -moz-transition:all 100ms $curve;
+	  -o-transition:all 100ms $curve;
+	  transition:all 100ms $curve;
+	  transform-origin:top;
+	  transform:scaleY(1);
 
 	/* Initial state when showing */
 	&.collapsed-add-remove,&.collapsed-add-active {
 	  opacity: 0;
-	
-	  display: block !important;
+	transform: scaleY(1);
+	  // display: block !important;
 	}
 
 	/* Will transition towards this state */
-	&.collapsed-remove.collapsed-remove-active {
-	  opacity: 1;
+	&.collapsed-remove {
+	 opacity: 1;
+	transform:scaleY(0);	 
 	  
 	}
 
