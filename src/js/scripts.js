@@ -1,7 +1,25 @@
 console.log('%c                ', 'background:#ec008c; color:  #FFF');
 console.log('%c  Hello, HUGE!  ', 'background:#ec008c; color:  #FFF');
 console.log('%c                ', 'background:#ec008c; color:  #FFF');
-var getReq = new XMLHttpRequest();
+// this is now angular take over
+
+var navApp = angular.module('navApp', [])
+
+navApp.controller('NavListController', ['$scope','$http', function($scope, $http){
+	$scope.devtest = "this test is up";
+	$http.get('api/nav.json')
+		.success(function(data, status, headers, config) {
+			  $scope.navlist = data;
+			  $scope.linklist = data.items;
+			  // console.log(data);
+		  }).
+		  error(function(data, status, headers, config) {
+		    // called asynchronously if an error occurs
+		    // or server returns response with an error status.
+		  });
+
+}]);
+
 
 // getReq.onreadystatechange = function(){
 // 	getReq.open('GET','../../api/nav.json',true);
@@ -9,22 +27,5 @@ var getReq = new XMLHttpRequest();
 // 	console.log(getReq.responseText);
 // };
 
-getReq.open("GET", '/api/nav.json', true);
-getReq.send();
-
-getReq.onreadystatechange = function() {
-    if (getReq.readyState == 4 && getReq.status == 200) {
-        var myArr = JSON.parse(getReq.responseText);
-        myFunction(myArr);
-    }
-}
-
-function myFunction(arr) {
-    var out = "";
-    var i;
-    for(i = 0; i < arr.length; i++) {
-        out += '<a href="' + arr[i].url + '">' + 
-        arr[i].display + '</a><br>';
-    }
-    document.getElementById("devList").innerHTML = out;
-}
+// getReq.open("GET", '/api/nav.json', true);
+// getReq.send();
