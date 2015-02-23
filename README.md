@@ -5,7 +5,7 @@
 Run with
 
 ```
-git clone **git@github.com:hugeinc/NavExercise.git**
+git clone https://github.com/hagata/NavExercise.git
 cd NavExercise
 $npm i && npm start
 ```
