@@ -38,7 +38,8 @@
 
 			<ul class="nav-first-level">
 				<li ng-repeat="(index, link) in linklist" 
-				ng-click="collapseSubMenu = !collapseSubMenu;sideSecondary = !sideSecondary">
+				ng-click="collapseSubMenu = !collapseSubMenu;sideSecondary = !sideSecondary; setActive(index)"
+				ng-class="state">
 				<a href="{{ link.url }}">{{ link.label }}</a >
 					<span class="expander-arrow"
 						ng-if="link.items != ''"
@@ -52,13 +53,16 @@
 						</svg>
 						</span>
 					<!-- and if there is sublinks -->
-					<ul class="nav-second-level" ng-class="{'collapsed': !collapseSubMenu}" ng-animate="'animate'">
+					<ul class="nav-second-level"
+					ng-show="active == index"
+					 ng-class="{'collapsed': !collapseSubMenu}" ng-animate="'animate'">
 						<li ng-repeat="sublink in link.items">
 							<a href="{{ sublink.url }}">{{ sublink.label }}</a>
 						</li>
 						
 					</ul>
 				</li>
+
 			</ul>
 		<div class="copyright">
 			<p>© 2014 Huge. All Rights Reserved.</p>
@@ -70,7 +74,7 @@
 
 	</header>
 
-<div class="screen" ng-show="navon" ng-click="sideNav =! sideNav; navon = !navon"></div>
+<div class="screen" ng-show="navon" ng-animate="animate" ng-click="sideNav =! sideNav; navon = !navon"></div>
 </section>
 <section class="hero">
 	
