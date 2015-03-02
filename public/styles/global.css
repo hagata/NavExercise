@@ -293,14 +293,6 @@ nav {
         cursor: pointer; }
         nav li:hover {
           background: #fff; }
-        nav li:hover > .nav-second-level {
-          display: block;
-          float: left;
-          position: absolute;
-          background: white;
-          top: 72px;
-          margin: 0;
-          margin-left: -24px; }
         nav li:hover > a {
           color: #ec008c; }
         nav li a {
@@ -339,26 +331,25 @@ nav {
     .nav-second-level a {
       padding-left: 0; } }
 
-.expander-arrow {
-  transition: all 100ms cubic-bezier(.54, .25, .35, .89);
-  position: absolute;
-  right: 24px;
-  cursor: pointer;
-  transform: rotate(0deg); }
-  .expander-arrow svg {
-    height: 24px;
-    width: 24px; }
-  @media screen and (min-width: 768px) {
-    .expander-arrow {
-      display: none; } }
-  .expander-arrow.sideSecondary-active {
-    transform: rotate(180deg); }
+@media screen and (min-width: 768px) {
+  .collapsed.nav-second-level {
+    opacity: .2; }
+  .nav-second-level {
+    display: block;
+    float: left;
+    position: absolute;
+    background: white;
+    top: 72px;
+    margin: 0;
+    margin-left: -24px; }
+  .expander-arrow {
+    display: none; } }
 
 .screen {
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.5);
-  position: absolute;
+  position: fixed;
   top: 0px;
   z-index: 90;
   opacity: 1;
@@ -375,6 +366,15 @@ nav {
     display: block !important; }
   .screen.ng-hide-remove.ng-hide-remove-active {
     opacity: 1; }
+  .screen.ng-hide-add.ng-hide {
+    opacity: 0; }
+  @media screen and (min-width: 768px) {
+    .screen.ng-animate {
+      -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 200ms;
+      -moz-transition: all cubic-bezier(.54, .25, .35, .89) 200ms;
+      -o-transition: all cubic-bezier(.54, .25, .35, .89) 200ms;
+      transition: all cubic-bezier(.54, .25, .35, .89) 200ms;
+      opacity: 1; } }
 
 .copyright {
   font: 12px/16px HelveticaNeue;
@@ -388,23 +388,6 @@ nav {
     position: absolute;
     height: 48px;
     bottom: 48px; }
-
-.side-open {
-  transform: translateX(0);
-  /* Initial state when showing */
-  /* Will transition towards this state */ }
-  .side-open.animate {
-    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
-    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
-    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
-    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
-    opacity: 1;
-    /* Default value but added for clarity */ }
-  .side-open.ng-hide-remove {
-    opacity: 0;
-    display: block !important; }
-  .side-open.ng-hide-remove.ng-hide-remove-active {
-    opacity: 1; }
 
 .sideSecondary-active {
   transform: translateY(0);
@@ -438,9 +421,38 @@ nav {
   .nav-second-level.collapsed-remove {
     opacity: 1;
     transform: scaleY(0); }
+
+.side-open {
+  transform: translateX(0);
+  /* Initial state when showing */
+  /* Will transition towards this state */ }
+  .side-open.animate {
+    -webkit-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -moz-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    -o-transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    transition: all cubic-bezier(.54, .25, .35, .89) 500ms;
+    opacity: 1;
+    /* Default value but added for clarity */ }
+  .side-open.ng-hide-remove {
+    opacity: 0;
+    display: block !important; }
+  .side-open.ng-hide-remove.ng-hide-remove-active {
+    opacity: 1; }
+
+.expander-arrow {
+  transition: all 100ms cubic-bezier(.54, .25, .35, .89);
+  position: absolute;
+  right: 24px;
+  cursor: pointer;
+  transform: rotate(0deg); }
+  .expander-arrow svg {
+    height: 24px;
+    width: 24px; }
   @media screen and (min-width: 768px) {
-    .nav-second-level {
+    .expander-arrow {
       display: none; } }
+  .expander-arrow.sideSecondary-active {
+    transform: rotate(180deg); }
 
 .hero {
   height: 240px;

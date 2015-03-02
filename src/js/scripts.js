@@ -31,6 +31,15 @@ navApp.controller('NavListController', ['$scope','$http', function($scope, $http
 	};
 
 
+	$scope.setActive = function(active){
+		$scope.active = active;
+		console.log($scope.active);
+		if (active && $scope.sideNav === false) {$scope.toggleScreen();};
+
+	};
+
+
+
 	$scope.toggleScreen = function(){
 		$scope.navon = !$scope.navon
 		console.log("navon :", $scope.navon);
